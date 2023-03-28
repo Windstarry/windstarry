@@ -14,14 +14,21 @@ const blogTheme = getThemeConfig({
     }
   ],
   // 开启离线的全文搜索支持（如构建报错可注释下面的配置再次尝试）
-  search: 'pagefind'
+  search: 'pagefind',
+  // 用于设置首页的自定义内容
+  home: {
+    name: "windstarry的blog",
+    motto: '记录学习,记录生活',
+    inspiring: '知识是一点一滴积累起来的...',
+    pageSize: 7
+  }
 })
 
 export default defineConfig({
   extends: blogTheme,
   lang: 'zh-cmn-Hans',
-  title: 'windstarry的博客',
-  description: '知识是一点一滴的积累',
+  title: "windstarry's blog",
+  description: '知识是一点一滴的积累...',
   vite: {
     optimizeDeps: {
       include: ['element-plus'],
@@ -31,7 +38,7 @@ export default defineConfig({
   themeConfig: {
     lastUpdatedText: '上次更新于',
     footer: {
-      message: '自定义底部内容',
+      message: 'Theme by <a target="_blank" href="https://theme.sugarat.top/"> @sugarat/theme | Copyright © 2022-2023',
       copyright:
         'MIT Licensed | <a target="_blank" href="https://theme.sugarat.top/"> @sugarat/theme </a>'
     },
