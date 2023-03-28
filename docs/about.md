@@ -1,6 +1,7 @@
 ---
 description: 简约风的Vitepress博客主题
 sticky: 1
+top: 1
 ---
 # 关于主题
 
