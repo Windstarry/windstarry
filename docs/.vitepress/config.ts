@@ -14,7 +14,7 @@ const blogTheme = getThemeConfig({
   //   }
   // ],
   // 开启离线的全文搜索支持（如构建报错可注释下面的配置再次尝试）
-  search: 'pagefind',
+  //search: 'pagefind',
   // 用于设置首页的自定义内容,也可以在index中设置
   // home: {
   //   name: 'windstarry的Blog',
@@ -29,6 +29,7 @@ export default defineConfig({
   lang: 'zh-cmn-Hans',
   title: "windstarry's blog",
   description: '知识是一点一滴的积累...',
+  base: '/windstarry/',
   vite: {
     optimizeDeps: {
       include: ['element-plus'],
@@ -38,9 +39,9 @@ export default defineConfig({
   themeConfig: {
     lastUpdatedText: '上次更新于',
     footer: {
-      message: 'Theme by <a target="_blank" href="https://theme.sugarat.top/"> @sugarat/theme | Copyright © 2022-2023',
+      message: 'Theme by <a target="_blank" href="https://windstarry.gitee.io//"> @windstarry | Copyright © 2022-2023',
       copyright:
-        'MIT Licensed | <a target="_blank" href="https://theme.sugarat.top/"> @sugarat/theme </a>'
+        'MIT Licensed | <a target="_blank" href="https://windstarry.gitee.io/"> @windstarry </a>'
     },
     logo: '/logo.png',
     // editLink: {
@@ -57,7 +58,7 @@ export default defineConfig({
     socialLinks: [
       {
         icon: 'github',
-        link: 'https://github.com/ATQQ/sugar-blog/tree/master/packages/theme'
+        link: 'https://windstarry.gitee.io/'
       }
     ]
   }
