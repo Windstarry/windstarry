@@ -20,10 +20,13 @@ categories:
 
 [VitePress](https://vuepress.vuejs.org/zh/) 是 VuePress 的弟弟，建立在 Vite 之上。它不仅有更快的速度，对 vue3 支持更好，并且它的配置项足够精简并且可用，使得开发者可以进行快速上手。
 
-> PS：VitePress 与当前的 VuePress 生态系统 (主要是主题和插件) 不兼容。总体思路是，VitePress 将拥有一个更精简的主题 API (更偏向 JavaScript API 而不是文件布局约定)，并且可能没有插件 (可以在主题中完成所有定制)。
+::: tip
+PS：VitePress 与当前的 VuePress 生态系统 (主要是主题和插件) 不兼容。总体思路是，VitePress 将拥有一个更精简的主题 API (更偏向 JavaScript API 而不是文件布局约定)，并且可能没有插件 (可以在主题中完成所有定制)。
+:::
 
-> Warning：VitePress 目前处于 alpha 状态。它已经适合开箱即用地组织文档，但是具体配置以及和主题相关的 API 仍然可能在小的版本之间发生变化。
-
+::: warning
+VitePress 目前处于 alpha 状态。它已经适合开箱即用地组织文档，但是具体配置以及和主题相关的 API 仍然可能在小的版本之间发生变化。
+:::
 ## 快速上手
 
 创建并进入新项目的目录。
