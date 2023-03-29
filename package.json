@@ -19,5 +19,7 @@
     "vitepress": "^1.0.0-alpha.62"
   },
   "author": "windstarry",
-  "license": "MIT"
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "https://gitee.com/windstarry/windstarry.git"
 }

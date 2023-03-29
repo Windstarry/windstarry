@@ -18,7 +18,7 @@ categories:
 
 ## VitePress
 
-[VitePress](https://link.juejin.cn?target=https%3A%2F%2Fvitepress.vuejs.org%2F) 是 VuePress 的弟弟，建立在 Vite 之上。它不仅有更快的速度，对 vue3 支持更好，并且它的配置项足够精简并且可用，使得开发者可以进行快速上手。
+[VitePress](https://vuepress.vuejs.org/zh/) 是 VuePress 的弟弟，建立在 Vite 之上。它不仅有更快的速度，对 vue3 支持更好，并且它的配置项足够精简并且可用，使得开发者可以进行快速上手。
 
 > PS：VitePress 与当前的 VuePress 生态系统 (主要是主题和插件) 不兼容。总体思路是，VitePress 将拥有一个更精简的主题 API (更偏向 JavaScript API 而不是文件布局约定)，并且可能没有插件 (可以在主题中完成所有定制)。
 
@@ -54,7 +54,7 @@ $ mkdir docs && echo '# Hello VitePress' > docs/index.md
 
 在 ***package.json*** 里添加一些脚本。
 
-```
+```JSON
 {
   ...
   "scripts": {
@@ -85,7 +85,7 @@ $ yarn docs:dev
 * 搜索
 * 布局
 
-你可以通过 [VitePress 官网](https://link.juejin.cn?target=https%3A%2F%2Fvitepress.vuejs.org%2F) 去了解更多，如果你需要中文版的可以临时看一下[VitePress 临时中文](https://link.juejin.cn?target=https%3A%2F%2Fdeploy-preview-1593--vitepress-docs.netlify.app%2Fzh%2F)。
+你可以通过 [VitePress 官网](https://vuepress.vuejs.org/zh/) 去了解更多，如果你需要中文版的可以临时看一下[VitePress中文](https://vuepress.vuejs.org/zh/)。
 
 ## 有趣的插件
 
@@ -108,7 +108,7 @@ GitHub Pages 是一项静态站点托管服务，它直接从 GitHub 上的仓�
 2. 在你的主题配置文件 ***docs/.vitepress/config.js*** 中，将 base 属性设置为你的 GitHub 仓库的名称。 如果你打算将你的站点部署到[https://foo.github.io/bar/](https://foo.github.io/bar/)，那么你应该将base设置为'/bar/'。 它应该始终以斜线开头和结尾。
 3. 在项目的 ***.github/workflows*** 目录中创建一个名为 ***deploy.yml*** 的文件，内容如下：
 
-   ```
+   ```yaml
    name: Deploy
 
    on:
@@ -141,7 +141,7 @@ GitHub Pages 是一项静态站点托管服务，它直接从 GitHub 上的仓�
    ```
 4. 如果你使用的是 pnpm，那么需要使用下面的配置：
 
-   ```
+   ```yaml
    name: Deployon:
    push:
        branches:
@@ -167,10 +167,11 @@ GitHub Pages 是一项静态站点托管服务，它直接从 GitHub 上的仓�
            publish_dir: docs/.vitepress/dist
            # cname: example.com # if wanna deploy to custom domain
    ```
-
-> PS：请替换对应的分支名称。例如，如果你要构建的分支是 master，则应将上述文件中的 main 替换为 master。
-
+::: tip
+PS：请替换对应的分支名称。例如，如果你要构建的分支是 master，则应将上述文件中的 main 替换为 master。
+:::
 5. 现在提交你的代码并将其推送到 main 分支,等待 action 完成。
 6. 在 git 仓库的 Setting 选项里，选择 gh-pages 分支作为 GitHub Pages 的来源。现在，你的文档将在每次推送时自动部署（你的预览地址也会在这个页面展示）。
-
-> PS：如何你不喜欢当前的域名，可以使用自己的域名，具体网上可以查一下资料。
+::: tip
+PS：如何你不喜欢当前的域名，可以使用自己的域名，具体网上可以查一下资料。
+:::
