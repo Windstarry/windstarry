@@ -1,27 +1,19 @@
 import { getThemeConfig, defineConfig } from '@sugarat/theme/node'
+import friend  from './config/friend'
+import footer from './config/footer'
+import nav from './config/nav'
+import editLink from './config/editLink'
+import home from './config/home'
 
 const blogTheme = getThemeConfig({
   // 文章默认作者
   author: 'windstarry',
   // 友链
-  // friend: [
-  //   {
-  //     nickname: '粥里有勺糖',
-  //     des: '你的指尖用于改变世界的力量',
-  //     avatar:
-  //       'https://img.cdn.sugarat.top/mdImg/MTY3NDk5NTE2NzAzMA==674995167030',
-  //     url: 'https://sugarat.top'
-  //   }
-  // ],
+  friend: friend,
   // 开启离线的全文搜索支持（如构建报错可注释下面的配置再次尝试）
   //search: 'pagefind',
   // 用于设置首页的自定义内容,也可以在index中设置
-  // home: {
-  //   name: 'windstarry的Blog',
-  //   motto: '记录学习,记录生活',
-  //   inspiring: '知识是一点一滴积累起来的...',
-  //   pageSize: 6
-  // }
+  home: home
 })
 
 export default defineConfig({
@@ -38,23 +30,10 @@ export default defineConfig({
   },
   themeConfig: {
     lastUpdatedText: '上次更新于',
-    footer: {
-      message: 'Theme by <a target="_blank" href="https://windstarry.gitee.io//"> @windstarry | Copyright © 2022-2023',
-      copyright:
-        'MIT Licensed | <a target="_blank" href="https://windstarry.gitee.io/"> @windstarry </a>'
-    },
+    footer:footer,
     logo: '/logo.png',
-    // editLink: {
-    //   pattern:
-    //     'https://github.com/ATQQ/sugar-blog/tree/master/packages/blogpress/:path',
-    //   text: '去 GitHub 上编辑内容'
-    // },
-    nav: [
-      {
-        text: '关于我',
-        link: '/about-me'
-      },
-    ],
+    editLink: editLink,
+    nav:nav,
     socialLinks: [
       {
         icon: 'github',
