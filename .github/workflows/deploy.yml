@@ -36,7 +36,7 @@ jobs:
       - name: Deploy github
         uses: peaceiris/actions-gh-pages@v3
         with:
-          publish_dir: ./dist
+          publish_dir: docs/.vitepress/dist
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
