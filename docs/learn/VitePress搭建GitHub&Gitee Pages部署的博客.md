@@ -3,6 +3,7 @@ title: VitePress搭建静态网站并在GitHub/Gitee-Pages 部署
 date: 2023-03-28
 description: VitePress搭建静态网站并在GitHub/Gitee-Pages部署
 sticky: 4
+top: 1
 tags:
  - 个人博客
  - VitePress
@@ -179,10 +180,8 @@ export default {
 :::tip
 
 1. `titleTemplate`：当 `titleTemplate` 的内容与 `title` 的内容相同时，不出现后缀;
-
-1. `base`：当网站部署在 `GitHub Pages` 或 `Gitee Pages` 时会存在子路径，例如：`https://username.github.io/repo/` ，需要设置 `base` 为 `/repo/`;
-
-1. `head`：引入的公共资源不会自动在路径拼接 `base` 内容，需自行处理，例如：
+2. `base`：当网站部署在 `GitHub Pages` 或 `Gitee Pages` 时会存在子路径，例如：`https://username.github.io/repo/` ，需要设置 `base` 为 `/repo/`;
+3. `head`：引入的公共资源不会自动在路径拼接 `base` 内容，需自行处理，例如：
 
 ```ts
 const BASE_URL = '/vite-press/'
@@ -243,7 +242,7 @@ export default {
 
 1. link：页面路由，支持外链；'/guid/' 表示加载 `guid/index.md`，'/guid' 表示加载 `guid.md`
 2. sidebar：默认为数组形式，侧边栏在所有页面会显示；可以使用对象形式，将需要匹配的路径作为 key ，该路径需要显示的侧边栏数组作为 value，例如：
-:::
+   :::
 
 ```ts
 const getSildBar = ()=>({
@@ -432,7 +431,6 @@ jobs:
           branch: gh-pages
 ```
 
-
 :::tip
 参数说明：
 
@@ -440,7 +438,7 @@ jobs:
 * `gitee-password`：`Gitee` 密码，通过路径 `Settings -> Secrets -> Actions` 新建 `GITEE_PASSWORD` 存放 `Gitee 帐号的密码`
 * `gitee-repo` ：指定部署的仓库，例如：`https://gitee.com/用户名/仓库名` ，那么 `gitee-repo` 就填写为 `用户名/仓库名`
 * `branch` ：指定部署的分支，默认 master
-:::
+  :::
 
 **短信验证：**
 
