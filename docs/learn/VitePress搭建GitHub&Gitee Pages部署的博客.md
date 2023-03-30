@@ -11,7 +11,6 @@ tags:
 categories:
  - 网站部署
 ---
-
 # VitePress搭建静态网站并在GitHub/Gitee-Pages部署
 
 ## 1、创建一个新项目
@@ -177,13 +176,13 @@ export default {
 }
 ```
 
-**注意事项：**
+:::tip
 
-1、`titleTemplate`：当 `titleTemplate` 的内容与 `title` 的内容相同时，不出现后缀;
+1. `titleTemplate`：当 `titleTemplate` 的内容与 `title` 的内容相同时，不出现后缀;
 
-2、`base`：当网站部署在 `GitHub Pages` 或 `Gitee Pages` 时会存在子路径，例如：`https://username.github.io/repo/` ，需要设置 `base` 为 `/repo/`;
+1. `base`：当网站部署在 `GitHub Pages` 或 `Gitee Pages` 时会存在子路径，例如：`https://username.github.io/repo/` ，需要设置 `base` 为 `/repo/`;
 
-3、`head`：引入的公共资源不会自动在路径拼接 `base` 内容，需自行处理，例如：
+1. `head`：引入的公共资源不会自动在路径拼接 `base` 内容，需自行处理，例如：
 
 ```ts
 const BASE_URL = '/vite-press/'
@@ -196,6 +195,8 @@ const getHead = () => {
   ]
 }
 ```
+
+:::
 
 ### 5.2、主题配置
 
@@ -238,11 +239,9 @@ export default {
 }
 ```
 
-**注意事项：**
 :::tip
 
 1. link：页面路由，支持外链；'/guid/' 表示加载 `guid/index.md`，'/guid' 表示加载 `guid.md`
-
 2. sidebar：默认为数组形式，侧边栏在所有页面会显示；可以使用对象形式，将需要匹配的路径作为 key ，该路径需要显示的侧边栏数组作为 value，例如：
 :::
 
@@ -312,16 +311,11 @@ exec /bin/bash
 ```
 
 1. 通过路径：项目仓库 -> 服务 -> `Gitee pages`，进入部署页面
-
-1. 按照要求进行实名认证
-
-1. 选择部署额分支
-
-1. 选择部署的目录，如果整个分支就是打包后的内容，空着即可；否则，选择项目打包后的目录
-
-1. 勾选强制使用 `https`
-
-1. 点击 `启动` ，稍等片刻即可部署完成；后续分支内容更新后，点击 `更新`
+2. 按照要求进行实名认证
+3. 选择部署额分支
+4. 选择部署的目录，如果整个分支就是打包后的内容，空着即可；否则，选择项目打包后的目录
+5. 勾选强制使用 `https`
+6. 点击 `启动` ，稍等片刻即可部署完成；后续分支内容更新后，点击 `更新`
 
 ## 8、优化部署
 
@@ -344,8 +338,7 @@ exec /bin/bash
 > 既然在 GitHub 建了仓库，那么也顺道将站点部署到 `GitHub Pages`
 
 1. 通过路径：`仓库 -> Settings -> Pages`，进入部署页面
-
-1. Build and deployment
+2. Build and deployment
 
 * `Source`：选择 `Deploy from a branch`
 * `Branch`：选择分支，选择资源目录，点击 `Save`
@@ -439,12 +432,15 @@ jobs:
           branch: gh-pages
 ```
 
+
+:::tip
 参数说明：
 
 * `gitee-username`：`Gitee` 用户名，例如：`https://gitee.com/用户名/仓库名` ，那么 `gitee-username` 就填写为 `用户名`
 * `gitee-password`：`Gitee` 密码，通过路径 `Settings -> Secrets -> Actions` 新建 `GITEE_PASSWORD` 存放 `Gitee 帐号的密码`
 * `gitee-repo` ：指定部署的仓库，例如：`https://gitee.com/用户名/仓库名` ，那么 `gitee-repo` 就填写为 `用户名/仓库名`
 * `branch` ：指定部署的分支，默认 master
+:::
 
 **短信验证：**
 
