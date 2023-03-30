@@ -1,4 +1,5 @@
 import { getThemeConfig, defineConfig } from '@sugarat/theme/node'
+import { SearchPlugin } from 'vitepress-plugin-search'
 import friend  from './config/friend'
 import footer from './config/footer'
 import nav from './config/nav'
@@ -11,7 +12,7 @@ const blogTheme = getThemeConfig({
   // 友链
   friend: friend,
   // 开启离线的全文搜索支持（如构建报错可注释下面的配置再次尝试）
-  //search: 'pagefind',
+  search: false,
   // 用于设置首页的自定义内容,也可以在index中设置
   home: home
 })
@@ -26,7 +27,8 @@ export default defineConfig({
     optimizeDeps: {
       include: ['element-plus'],
       exclude: ['@sugarat/theme']
-    }
+    },
+    plugins:[SearchPlugin()],
   },
   themeConfig: {
     lastUpdatedText: '上次更新于',
