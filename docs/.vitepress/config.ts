@@ -5,6 +5,7 @@ import footer from './config/footer'
 import nav from './config/nav'
 import editLink from './config/editLink'
 import home from './config/home'
+import flexsearchoptions from './config/flexsearchoptions'
 
 const blogTheme = getThemeConfig({
   // 文章默认作者
@@ -28,7 +29,7 @@ export default defineConfig({
       include: ['element-plus'],
       exclude: ['@sugarat/theme']
     },
-    plugins:[SearchPlugin()],
+    plugins:[SearchPlugin(flexsearchoptions)],
   },
   themeConfig: {
     lastUpdatedText: '上次更新于',
