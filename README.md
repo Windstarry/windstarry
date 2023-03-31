@@ -1,23 +1,9 @@
 # 简约风的Vitepress 博客主题
+欢迎访问[我的博客](https://windstarry.gitee.io/windstarry/)
+## 博客主题说明
 使用[粥里有勺糖](https://sugarat.top/)主题模板构建
-## 已支持功能
-介绍一下主要的，非所有，详见[主题文档](https://theme.sugarat.top/)
-- 博客首页
-- 文章列表
-- 精选文章
-- 友链
-- 标签分类
-- 图片预览
-- 搜索（标题+简介）
-- giscus 评论系统
-- 推荐文章（同目录）
-- 阅读时间计算
-- 全局的提示弹窗 (由 el-alert 驱动)
-- 全局的公告弹窗，支持设置图片，文字，按钮
 
-## 规划中功能
-- Valine 评论系统
-- 文章合集
-- 更多可定制的主题样式
-- 全文搜索
-- RSS
+## 我的github数据
+[Github](https://github.com/windstarry)
+<p align="center"> <img src="https://github-readme-stats.vercel.app/api?username=windstarry&show_icons=true&theme=gotham" alt="windstarry" />
+
