@@ -29,6 +29,10 @@ const blogTheme = getThemeConfig({
     nextText: '换一组',
     pageSize: 9,
     empty: '暂无推荐文章'
+  },
+  // //是否展示文章的预计阅读时间
+  article: {
+    readingTime: true
   }
 })
 

@@ -9,6 +9,10 @@ export default [
     ],
   },
   {
+    text: "留言板",
+    link: "/messageboard",
+  },
+  {
     text: "关于我",
     link: "/about-me",
   },
