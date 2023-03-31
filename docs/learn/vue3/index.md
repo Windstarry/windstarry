@@ -9,4 +9,3 @@ recommend: false
 ## 目录
 - [Vue3项目实战](./Vue3项目实战.md)
 - [CSS基础学习](./CSS基础学习.md)
-- [HTML基础语法学习](./HTML基础语法学习.md)
