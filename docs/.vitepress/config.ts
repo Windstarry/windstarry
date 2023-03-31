@@ -15,7 +15,21 @@ const blogTheme = getThemeConfig({
   // 开启离线的全文搜索支持（如构建报错可注释下面的配置再次尝试）
   search: false,
   // 用于设置首页的自定义内容,也可以在index中设置
-  home: home
+  home: home,
+  // 开启评论支持
+  comment: {
+    repo: 'Windstarry/windstarry',
+    repoId: 'R_kgDOJQak9Q',
+    category: 'Announcements',
+    categoryId: 'DIC_kwDOJQak9c4CVbjE'
+  },
+  // 侧边栏增加推荐文章
+  recommend: {
+    title: '🔍 相关文章',
+    nextText: '换一组',
+    pageSize: 9,
+    empty: '暂无推荐文章'
+  }
 })
 
 export default defineConfig({
