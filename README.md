@@ -1,6 +1,6 @@
 ## Hi, I'm windstarry 👋
 - ⚡ Python.
-- ✍️ [Blogger](https://windstarry.gitee.io/windstarry/)
+- ✍️ [Blogger](https://windstarry.github.io/windstarry/)
 - 💻 [GitHub](https://github.com/windstarry)
 - 🌱 [LinkedIn](https://www.linkedin.com/in/windstarry/)
 - 📫 [Email](mailto:liefengwind@gmail.com)
