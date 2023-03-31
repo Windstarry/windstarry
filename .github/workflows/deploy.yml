@@ -43,8 +43,8 @@ jobs:
 
 
 
-  gitee-branch-sync: // [!code focus:10]
-    needs: ["gh-pages-deploy"] // [!code focus]
+  gitee-branch-sync:
+    needs: ["gh-pages-deploy"]
     runs-on: ubuntu-latest
     steps:
       - uses: peiyanlu/git-sync-action@v1
@@ -56,8 +56,8 @@ jobs:
           destination-branch: gh-pages
 
 
-  gitee-pages-sync: // [!code focus:10]
-    needs: ["gitee-branch-sync"] // [!code focus]
+  gitee-pages-sync:
+    needs: ["gitee-branch-sync"]
     runs-on: ubuntu-latest
     steps:
       - name: Build Gitee Pages
