@@ -321,7 +321,7 @@
   resolved "https://registry.npmmirror.com/@sxzz/popperjs-es/-/popperjs-es-2.11.7.tgz#a7f69e3665d3da9b115f9e71671dae1b97e13671"
   integrity sha512-Ccy0NlLkzr0Ex2FKvh2X+OyERHXJ88XJ1MXtsI9y9fGexlaXaVTPzBCRBwIxFkORuOb+uBqeu+RqnpgYTEZRUQ==
 
-"@sugarat/theme@^0.1.9":
+"@sugarat/theme@^0.1.17":
   version "0.1.17"
   resolved "https://registry.npmmirror.com/@sugarat/theme/-/theme-0.1.17.tgz#e5294ce4bdb3acad69344f267a2e5dd76a41969b"
   integrity sha512-FUX/awtJtQb8d7Xw9DP9+obCeBWbFcVLJ4+SqHNMdYOQ2Ju1cEsvFTvpp73DNXxmxdhcdkXmp7iK3fJuBxZQew==
