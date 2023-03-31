@@ -1548,8 +1548,6 @@ https://www.bilibili.com/video/BV1pE411q7FU?p=258&spm_id_from=pageDriver
 网页常见一些三角形，都是使用css直接画出来的
 ```
 
-![image-20210403233953016](image/CSS基础学习/20210403233959.png)
-
 #### 案例
 
 ```html
