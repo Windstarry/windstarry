@@ -1,6 +1,7 @@
 ---
 sticky: 999
 description: 1分钟内完成自己的博客创建
+date: 2023-03-07 20:00:00
 tag:
  - SOP
 ---

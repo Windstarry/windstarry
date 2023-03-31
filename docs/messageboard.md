@@ -1,6 +1,6 @@
 ---
 title: 留言板
-date: 2023-03-28
+date: 2023-03-28 20:00:00
 description: 有什么想说的在这里留言吧~
 hidden: true
 recommend: false

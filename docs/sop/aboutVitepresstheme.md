@@ -2,6 +2,7 @@
 description: 简约风的Vitepress博客主题
 sticky: 1
 top: 1
+date: 2023-03-01 20:00:00
 ---
 # 关于主题
 
