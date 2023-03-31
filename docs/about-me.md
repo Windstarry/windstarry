@@ -3,6 +3,8 @@ title: 关于自己
 date: 2023-03-28
 description: 介绍下我自己
 hidden: true
+recommend: false
+comment: false
 tags:
  - 其它
 ---

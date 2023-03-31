@@ -3,6 +3,7 @@ title: VitePress+GithubPages搭建自己的个人博客
 date: 2023-03-28
 description: VitePress+GithubPages搭建自己的个人博客
 sticky: 1
+top: 1
 tags:
  - 个人博客
  - VitePress
