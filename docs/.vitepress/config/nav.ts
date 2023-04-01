@@ -6,6 +6,8 @@ export default [
       { text: "python", link: "/learn/python/" },
       { text: "vue3", link: "/learn/vue3/" },
       { text: "博客建站", link: "/learn/webblog/" },
+      { text: "Other", link: "/learn/other/" },
+
     ],
   },
   {
