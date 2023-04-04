@@ -66,7 +66,7 @@ class Books(Base):
 在上述代码中，我们建立了表名为books的类Books，该类包含了之前提到的三个字段，注意，这里的书名价格用的是整数表示。
 在这里，我们用`from .database import Base`导入了刚才创建的基类，对于某些编辑器会提示这里的导入警告，一个合适的办法是在当前文件夹下新建一个__init__.py空文件，这样语法检查器会认为这是一个包，可以被导入而不会出现警告信息。
 ## 二、建立架构文件
-在之前一篇文章中我们介绍过利用pydantic来检验前端传输数据的功能，这里同样用该包来完成输入或输出数据的类设定，在同一个目录下建立文件**schemas.py**文件，其中建立一个与模型类完全一致的类，这主要是要利用其id属性来完成更改数据的功能，再建立一个去掉id的类，用来新建数据时使用，代码如下：
+在[关于FastAPI与Vue3的通信](./关于FastAPI与Vue3的通信.md)已经介绍过利用pydantic来检验前端传输数据的功能，这里同样用该包来完成输入或输出数据的类设定，在同一个目录下建立文件**schemas.py**文件，其中建立一个与模型类完全一致的类，这主要是要利用其id属性来完成更改数据的功能，再建立一个去掉id的类，用来新建数据时使用，代码如下：
 ```python
 from typing import Union
 from pydantic import BaseModel
@@ -83,7 +83,9 @@ class BooksBase(BaseModel):
     bookname : str
     prices : Union[int, None] = None
 ```
+:::tip 代码解释
 在上述代码中，类Books有一个内部类class Config，这是pydantic中的一个配置，将其中的orm_mode设定为True，即告诉pydantic，这是一个可以直接映射为对象关系模型的类。而BooksBase类则只是对数据进行校验。
+:::
 当然，我们可以利用类的继承功能，将上述代码改写如下：
 ```python
 from typing import Union
@@ -202,12 +204,16 @@ def create_book(book: schemas.BooksBase, db: Session = Depends(get_db)):
 将目录切换至backend的上一级，在命令窗口运行下列命令：
 `uvicorn backend.main:app --reload --port 8001`
 然后你会发现在backend的上一级目录中生成了一个数据库文件sql_app.db，此时如果用DB Browser for SQLite这个软件来查看该数据库文件时，会发现我们定义的表已经在其中创建了。
-在FastAPI中，有一个非常强大的文档功能，它可以让我们对刚才编写的程序进行测试。在浏览器地址栏输入http://127.0.0.1:8001/docs，进入swagger用户界面，这是一个独立的软件，只不过被FastAPI集成在自己的内部，用以管理数据。这里只用其来测试我们上述编写的代码是否能成功操作数据库。
+
+在FastAPI中，有一个非常强大的文档功能，它可以让我们对刚才编写的程序进行测试。在浏览器地址栏输入<http://127.0.0.1:8001/docs>，进入swagger用户界面，用以管理接口数据。这里只用其来测试我们上述编写的代码是否能成功操作数据库。
 - 增加数据
-增加数据用的是POST方法，其地址同样用的是/books/
 - 查询
 - 修改
 - 删除
 
 ## 小结
 在本文中，我们用一个小例子来说明了如何利用FastAPI和SQLAlchemy来对数据库进行增删除改查操作，熟悉该过程，有助于我们加深对FastAPI操作数据库的理解。
+## 相关文章
+1. [关于FastAPI与Vue3的通信](./关于FastAPI与Vue3的通信.md)
+2. [FastAPI对数据库的增删改查](./FastAPI对数据库的增删改查.md)
+3. [基于Vue3和FastAPI对数据库进行操作](./基于Vue3和FastAPI对数据库进行操作.md)
