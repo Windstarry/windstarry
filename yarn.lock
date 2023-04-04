@@ -321,10 +321,10 @@
   resolved "https://registry.npmmirror.com/@sxzz/popperjs-es/-/popperjs-es-2.11.7.tgz#a7f69e3665d3da9b115f9e71671dae1b97e13671"
   integrity sha512-Ccy0NlLkzr0Ex2FKvh2X+OyERHXJ88XJ1MXtsI9y9fGexlaXaVTPzBCRBwIxFkORuOb+uBqeu+RqnpgYTEZRUQ==
 
-"@sugarat/theme@^0.1.18":
-  version "0.1.18"
-  resolved "https://registry.npmmirror.com/@sugarat/theme/-/theme-0.1.18.tgz#a16a6d7422f96afe9a183d18ce76a2dfa61c56f1"
-  integrity sha512-rvyl3HrOMwLlUK43NQsozEjzu9cjmN1HchvwM2liNOHU806D/RHBbED5bhbeMM56K2fkDuUX6B2NiTOnVmaoKw==
+"@sugarat/theme@^0.1.19":
+  version "0.1.19"
+  resolved "https://registry.npmmirror.com/@sugarat/theme/-/theme-0.1.19.tgz#52d8a65a99bf6a2115bffdf3a941e29c36522ba4"
+  integrity sha512-X1+OieKC2FvXEDEJPZlkuOeX3pOAcRV/h4dsMp5sBx9V+F6IIHC8yvLGBSmyzvm3MFtmzDvQQWgbV8+yy3rvFA==
   dependencies:
     "@vue/shared" "^3.2.45"
     "@vueuse/core" "^9.6.0"
