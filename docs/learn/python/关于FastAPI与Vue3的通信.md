@@ -19,7 +19,17 @@ categories:
 ```shell
 npm init vue@latest
 ```
-这个命令会自动调用create-vue，这是vue的官方脚手架工具，为了区分前后端，在该项目下，建议新手将所要创建的工程名设置为**frontend**，以区分同一个目录下的后端文件夹**backend**（目前该文件夹还未创建）。
+使用yarn初始化,并使用vite命令创建
+```shell
+yarn create vite frontend --template vue
+```
+:::tip 使用yarn的优点
+**yarn的特点：快，安全，可靠**
+- Yarn 缓存了每个下载过的包，所以再次使用时无需重复下载。 同时利用并行下载以最大化资源利用率，因此安装速度更快。
+- 超级安全-在执行代码之前，Yarn 会通过算法校验每个安装包的完整性。
+- 超级可靠-使用详细、简洁的锁文件格式和明确的安装算法，Yarn 能够保证在不同系统上无差异的工作。
+:::
+这个命令会自动调用create-vue，这是vue的官方脚手架工具，为了区分前后端，在该项目下，建议初始将所要创建的工程名设置为**frontend**，以区分同一个目录下的后端文件夹**backend**（目前该文件夹还未创建）。
 运行下面命令：
 ```shell
 cd frontend
@@ -28,7 +38,7 @@ npm run dev
 ```
 或者使用yarn的命令
 ```shell
-yarn install
+yarn
 yarn dev
 ```
 此时在浏览器中输入网址[http://127.0.0.1:5174](http://127.0.0.1:5174/)(注意：端口有可能是5173)，就可以看到前端项目的页面了。
@@ -106,6 +116,11 @@ createAPP(App).mount('#app')
     <p>{{ msg }}</p>  
 </template>
 ```
+点击按钮前获取到的数据
+![图 1](./images/0c1a9ff6a55799420c0c8ac74db93c5b846cc86827ab2a3083b4358439040ab1.png)  
+点击后从后端获取的数据
+![图 2](./images/4118eeacd2fd47b718506c667cf13f5870e706ceffef70707006469c6923e9e2.png)  
+
 :::tip 代码注释
 在上述代码中，给按钮绑定了一个click事件，当这个按钮被点击时，它会调用getMessage()函数，该函数中用axios去获得后端根目录下的数据，然后将要显示的文字更改为相应的返回值{hello:world}。
 :::
@@ -212,7 +227,11 @@ def update_item(item: Item):
     return {'item':item}
 ```
 这里将接受到的人员年龄增加10后，打印在服务器端的控制台上，并将修改的结果返回给客户端，由客户端打印在浏览器的控制台上。服务器接受并修改了客户端传送过来的数据，客户端也接受到了修改后的数据。
+![图 3](./images/3c882d297e37a143adc56c59b49457437fb9824d7343999f56b3bb7ffbf93a03.png)  
 至此，完成了一个客户端与服务器端完整的通信程序。
+
+## 仓库代码
+[仓库代码展示](https://gitee.com/windstarry/fastapi_vue_demo)
 ## 相关文章
 1. [关于FastAPI与Vue3的通信](./关于FastAPI与Vue3的通信.md)
 2. [FastAPI对数据库的增删改查](./FastAPI对数据库的增删改查.md)

@@ -29,14 +29,41 @@ app.add_middleware(
 )
 ```
 其余部分同样遵从[FastAPI对数据库的增删改查](./FastAPI对数据库的增删改查.md)的文件结构：
-![文件结构](./images/bb3bc169db326201281418f75512df0b0703710b3b97694964212de6e267c41e.png)
+```txt
+├─ backend
+│  ├─ crud.py
+│  ├─ database.py
+│  ├─ main.py
+│  ├─ models.py
+│  ├─ schemas.py
+│  ├─ __init__.py
+```
 然后将当前目录切换至backend的上一级，在命令行运行如下命令：
 `uvicorn backend.main:app --reload --port 8001`
 这样，服务器端即开始监听<http://127.0.0.1:5174/>的响应。
 ## 客户端的操作
-由于客户端是用官方的脚手架工具命令`npm init vue@latest`生成的，其生成结构如下图所示：
-![图 2](./images/8f9690fa4aaa31f2f512d1ef79ef166da10f1dc5f059f262e4330bef14f62684.png)
-先在上述红色方框中的**src/components**中建立**Books.vue**单文件组件，然后将**src/App.vue**中的内容全部删除，添加如下代码：
+由于客户端是用官方的脚手架工具命令`yarn create vite frontend --template vue`生成的，其生成结构如下图所示：
+```txt
+├─ frontend
+│  ├─ .vscode
+│  │  └─ extensions.json
+│  ├─ index.html
+│  ├─ package.json
+│  ├─ public
+│  │  └─ vite.svg
+│  ├─ README.md
+│  ├─ src
+│  │  ├─ App.vue
+│  │  ├─ assets
+│  │  │  └─ vue.svg
+│  │  ├─ components
+│  │  │  └─ HelloWorld.vue
+│  │  ├─ main.js
+│  │  └─ style.css
+│  ├─ vite.config.js
+│  └─ yarn.lock
+```
+先在**src/components**中建立**Books.vue**单文件组件，然后将**src/App.vue**中的内容全部删除，添加如下代码：
 ```vue
 <script setup>
   import Books from './components/Books.vue'  
@@ -49,7 +76,17 @@ app.add_middleware(
 </template>
 ```
 src的详细目录内容如下：
-![图 3](./images/02d5e4f74d6c7f569a064319bc55dac48852814ca6f101c3cd36a8a3f0a6c150.png)  
+```txt
+├─ src
+│  │  ├─ App.vue
+│  │  ├─ assets
+│  │  │  └─ vue.svg
+│  │  ├─ components
+│  │  │  ├─ Books.vue
+│  │  │  └─ HelloWorld.vue
+│  │  ├─ main.js
+│  │  └─ style.css
+```
 需要对数据库的操作均需要在**Books.vue**文件中完成。
 ## 客户端模板框架
 在vue的官网上有提供一个CRUD的程序，其地址是：<https://cn.vuejs.org/examples/#crud>，接下来以该程序中的内容为**Books.vue**文件的基础，再来添加对数据库的操作。
@@ -75,7 +112,8 @@ src的详细目录内容如下：
 </template>
 ```
 其页面呈现如下图所示：
-![图 4](./images/1e186fc25d8f0bac0090f2cc87fc2c41f2768b273b9a98a54aa96f2dd817653c.png)
+![图 11](./images/b85da606a83e009812cef9426ca31695a38ee9278c68bec4591f977cbc93645b.png)  
+
 在上述模板代码中，定义了两个输入框和一个列表框，分别为其绑定了三个v-model属性，该属性可方便对其中的数据进行操作，同时，在列表框中，用v-for语句循环列出了书名和价格。
 页面中还增加了四个按钮，分别绑定了四个事件。接下来，我们要为该单文件组件编写相应的javascprit代码。
 当然 ，为了使前端能访问后端，还需要在前端文件夹下的**main.js**中添加对后端的辨识，具体代码如下：
@@ -138,7 +176,8 @@ export default{
 ```
 上述代码可根据bookname变量进行查询，并将返回值分别存储在names和bookids两个数组中，其中names中只是简单地将书名和价格用,连接。
 由于目前数据库中并无数据，因此查询输入的字符串时，返回的names为空，这样显示的界面如下图所示：
-![图 5](./images/341facd80826a2d7d23a91b807e8df4bc5f1aeaa9a8fbb4d00788a1a3b8a8c8f.png)  
+![图 19](./images/b101d6d823edc62f98dc618463c23a6474c41b31da955a9caa4b0db2353e6002.png)  
+
 ## 客户端增加数据
 在增加数据时，后台的代码需用数据框架schemas.BooksBase来校验，这个类只包含书名和书价两个量，因此，只需要将这两个数据传输给后台即可，代码如下：
 ```java
@@ -179,26 +218,26 @@ export default{
       return null;      
     },
 }
+}
 ```
 在向数据库添加时，要做两个检查：
 1. 当输入的数据为空时，不予操作；
 2. 当输入的数据已经存在于当前列表中时，不予添加，这样就在客户端完成了数据的校验，省去了与服务器通信的烦琐。
-
 因此，需要单独编写一个校验函数hasValidInput()完成对数据是否为空的检验。
 之后的axios参数data会传递当前书名和书价，后端的框架会自动将其组合成schemas.BooksBase类，当添加成功后，服务器会返回新增加的数据，此时再将其添加至names，同时将相应的id加入bookids数组中。  
 
 这里要注意，在新数据未增加时，并没有对应的id。
 现向数据库中添加两条记录，则程序会自动将两条记录显示于列表中，如下图：
-![图 6](./images/67cc4410b1fedad9b9b5f0f3f48d789e122b936278ca5f55f5fd1bc2d79a8f2e.png)  
+
 此时，在浏览器安装了Vue.js devtools这个插件的情况下，可以看到bookids这个数组中存放的书籍id号，如下图所示：
-![图 7](./images/47fd1ec0891c29f7fcddc57fada616de846a3cc96f1b88ec1478ab9cf8319c16.png)  
+![图 13](./images/c6a39b174594205d800c0f0fecd1e2ffb4f04035859fcd62bf7d15d842dc50fe.png)  
 :::tip 提示
 vue.js-devtools这个插件在调试vue开发的网站时非常有用
 :::
 此时来检查一下查询功能，则显示如下：
-![图 8](./images/ae6b1c22a07e765073e63d140b616f7567c79133e67d72411b9c5e1f952fab1a.png)  
+![图 16](./images/b85da606a83e009812cef9426ca31695a38ee9278c68bec4591f977cbc93645b.png) 
 对应的控制台数据显示如下：
-![图 9](./images/aff70e8f3929abfd0c26d84010eefba6325552c1491cc0af224f4a633282ae87.png)  
+![图 17](./images/c6a39b174594205d800c0f0fecd1e2ffb4f04035859fcd62bf7d15d842dc50fe.png)   
 ## 客户端删除数据
 删除数据时只需要提供书籍的id号即可，这里要注意，如果单独在POST中传递数据，FastAPI需要将该数据也放入路径中，在FastAPI中对应的删除代码如下（main.py里）：
 ```python
@@ -302,11 +341,11 @@ export default{
     },
 }
 ```
-上述代码中，通过判断当前输入的数据是否在当前列表中，来确定是否进行修改，一旦修改完成，则刷新全局names数组。
-数据更新如下图所示：
-![图 10](./images/d1c1e6c8f2f7e95dd6ad08f83c69dc05a6d8d36d8dbdbd501317323e94627798.png)  
+上述代码中，通过判断当前输入的数据是否在当前列表中，来确定是否进行修改，一旦修改完成，则刷新全局names数组。 
 ## 小结
 本文利用Vue3作为客户端，向后端FastAPI发送数据完成了对数据库的增删改查操作。
+## 仓库代码
+[仓库代码展示](https://gitee.com/windstarry/fastapi_vue_demo)
 ## 相关文章
 1. [关于FastAPI与Vue3的通信](./关于FastAPI与Vue3的通信.md)
 2. [FastAPI对数据库的增删改查](./FastAPI对数据库的增删改查.md)
