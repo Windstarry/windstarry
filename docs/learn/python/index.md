@@ -13,3 +13,4 @@ recommend: false
 - [基于Vue3和FastAPI对数据库进行操作](./基于Vue3和FastAPI对数据库进行操作.md)
 - [tortoise关联关系](./tortoise关联关系.md)
 - [深入理解python-with语句](./深入理解python-with语句.md)
+- [深Loguru日志写入基础](./Loguru日志写入基础.md)
