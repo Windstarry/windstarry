@@ -1,6 +1,7 @@
 ---
 title: '关于FastAPI与Vue3的通信'
 description: '关于FastAPI与Vue3的通信'
+date: 2023-4-10
 recommend: 2
 sticky: 4
 tags:

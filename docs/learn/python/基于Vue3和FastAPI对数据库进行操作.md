@@ -1,6 +1,7 @@
 ---
 title: '基于Vue3和FastAPI对数据库进行操作'
 description: '基于Vue3和FastAPI对数据库进行操作'
+date: 2023-4-10
 recommend: 2
 sticky: 4
 tags:

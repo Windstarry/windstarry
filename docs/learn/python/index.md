@@ -14,3 +14,4 @@ recommend: false
 - [tortoise关联关系](./tortoise关联关系.md)
 - [深入理解python-with语句](./深入理解python-with语句.md)
 - [深Loguru日志写入基础](./Loguru日志写入基础.md)
+- [tortoise-orm入门之单表常用操作](./tortoise-orm入门之单表常用操作.md)
