@@ -7,5 +7,5 @@ recommend: false
 记录一些Vue3的知识
 :::
 ## 目录
-- [Vue3项目实战](./Vue3项目实战.md)
-- [CSS基础学习](./CSS基础学习.md)
+## [Vue3项目实战](./Vue3项目实战.md)
+## [CSS基础学习](./CSS基础学习.md)

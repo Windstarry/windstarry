@@ -7,4 +7,4 @@ recommend: false
 记录一些博客建站的知识
 :::
 ## 目录
-- [VitePress+GithubPages](./VitePress+GithubPages搭建自己的个人博客.md)
+## [VitePress+GithubPages](./VitePress+GithubPages搭建自己的个人博客.md)
