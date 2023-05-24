@@ -36,7 +36,7 @@ app.mount('#app')
 ## 4.定义modules
 在src/stores/modules下创建user.ts文件，定义user相关的store
 
-```typescript
+```javascript
 import { defineStore } from 'pinia'
 import { getUserInfo, logout } from '@/api'
 import type { UserState } from './model/userModel'
@@ -65,24 +65,20 @@ export const useUserStore = defineStore({
   },
 })
 ```
->在pinia中通过defineStore定义一个store
->id是store的唯一标识，不同的store不能重复
->state为定义store的状态
->actions定义方法，这里可以修改state
+在pinia中通过defineStore定义一个store
+id是store的唯一标识，不同的store不能重复
+state为定义store的状态
+actions定义方法，这里可以修改state
 
 ## 5.使用store
-
-```typescript
-
-<script lang="ts" setup>
+```js
 import { useUserStore } from '@/store/modules/user'
 const userStore = useUserStore()
 // 通过userStore就能拿到state或者actions
 const { name, avatar } = userStore.userInfo || {}
-</script>
 ```
 ## 6.store持久化
-何为store持久化？持久化的意思就是刷新页面store的数据也不会消失，实现的思路也很简单，就是把store中的数据缓存到localStorage中，然后store初始化的值从store中获取就行了。如果是挨个缓存，然后挨个取值，显得很不明智。这里我们找到了一个持久化的插件：<pinia-plugin-persistedstate>。具体的使用方法如下：
+何为store持久化？持久化的意思就是刷新页面store的数据也不会消失，实现的思路也很简单，就是把store中的数据缓存到localStorage中，然后store初始化的值从store中获取就行了。如果是挨个缓存，然后挨个取值，显得很不明智。这里我们找到了一个持久化的插件：pinia-plugin-persistedstate。具体的使用方法如下：
 
 安装依赖：
 ```shell
