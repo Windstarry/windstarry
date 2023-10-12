@@ -10,3 +10,4 @@ recommend: false
 ## [Vue3项目实战](./Vue3项目实战.md)
 ## [CSS基础学习](./CSS基础学习.md)
 ## [关于pinia的使用](./关于pinia的使用.md)
+## [硅谷甄选随堂笔记](./硅谷甄选随堂笔记.md)
