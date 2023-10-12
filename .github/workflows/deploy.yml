@@ -29,8 +29,8 @@ jobs:
         # 构建
       - name: Build
         run: |
-          pnpm install
-          pnpm build
+          yarn install
+          yarn build
 
       # 发布到 gh-page 分支
       - name: Deploy github
