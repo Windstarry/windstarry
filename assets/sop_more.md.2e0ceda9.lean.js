@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as r,Q as a}from"./chunks/framework.c9ba2ff1.js";const d=JSON.parse('{"title":"更多能力","description":"","frontmatter":{"top":3},"headers":[],"relativePath":"sop/more.md","filePath":"sop/more.md"}'),o={name:"sop/more.md"},l=a("",3),n=[l];function s(h,_,p,i,c,m){return t(),r("div",null,n)}const g=e(o,[["render",s]]);export{d as __pageData,g as default};
