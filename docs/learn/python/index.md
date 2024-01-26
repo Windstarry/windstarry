@@ -16,3 +16,4 @@ recommend: false
 ## [深入理解python-with语句](./深入理解python-with语句.md)
 ## [Loguru日志写入基础](./Loguru日志写入基础.md)
 ## [tortoise-orm入门之单表常用操作](./tortoise-orm入门之单表常用操作.md)
+## [Django-Ninja-Extra的基本用法](./Django-Ninja-Extra的基本用法.md)
